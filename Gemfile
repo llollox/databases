@@ -29,7 +29,7 @@ gem 'spring',        group: :development
 
 
 group :development, :test do
-  gem 'better_errors'
+  gem 'better_errors', '~>1.1.0'
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'capistrano',  '~> 3.1'
