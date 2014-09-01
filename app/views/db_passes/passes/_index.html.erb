@@ -1,0 +1,30 @@
+<%= render "layouts/header_index" %>
+
+<div id="pagination_table">
+<table class="table table-hover table-striped">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Altitude</th>
+    <% if current_user %>
+        <th></th>
+        <th></th>
+    <% end %>
+  </tr>
+
+<% @passes.each_with_index do |pass,index| %>
+  <tr>
+    <td><%= index + 1 %></td>
+    <td><%= link_to pass.name, pass %></td>
+    <td><%= pass.altitude %></td>
+    <% if current_user %>
+        <td><%= link_to 'Edit', edit_pass_path(pass), 
+            :class => "btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', pass, method: :delete, 
+            data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+</div>
+<br />

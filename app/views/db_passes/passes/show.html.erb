@@ -1,0 +1,48 @@
+<div class="container-fluid">
+
+<%= render "layouts/header_show", :title => @pass.name %> 
+
+<div class="row">
+  <div class="col-sm-6">
+
+
+    <p>
+      <b>Altitude:</b>
+      <%= @pass.altitude %> metri
+    </p>
+
+    <p>
+      <b>Latitude:</b>
+      <%= @pass.latitude %>
+    </p>
+
+    <p>
+      <b>Longitude:</b>
+      <%= @pass.longitude %>
+    </p>
+
+    <% if current_user %>
+
+      <br/>
+
+      <%= link_to command_label('fa fa-edit', "Edit"), 
+          edit_pass_path(@pass), :class=> "btn btn-primary" %>
+
+      <%= link_to command_label('fa fa-trash-o', "Destroy"), 
+          @pass, method: :delete, data: { confirm: 'Are you sure?' }, 
+          :class => "btn btn-danger" %>
+    <% end %>
+
+    <br/><br/>
+
+    <%= render "localities/index", :localities => @pass.localitiables %>
+  </div>
+  <div class="col-sm-6">
+    <%= render "layouts/single_marker_map", :item => @pass %>
+  </div>
+
+</div>
+
+<br/><br/>
+</div>
+

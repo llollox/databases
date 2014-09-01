@@ -1,0 +1,24 @@
+<br/>
+<center>
+	<% if @brand.logo %>
+	<%= image_tag(@brand.logo.photo.url(:thumb)) %>
+	<% else %>
+	<h2><%= @brand.name %></h2>
+	<% end %>
+	<br/><br/>
+  <% if current_user %>
+      <br/>
+
+      <%= link_to command_label('fa fa-edit', "Edit"), 
+      edit_brand_path(@brand), :class=> "btn btn-primary" %>
+
+      <%= link_to command_label('fa fa-trash-o', "Destroy"), 
+      @brand, method: :delete, data: { confirm: 'Are you sure?' }, 
+      :class => "btn btn-danger" %>
+    <% end %>
+</center>
+<br/>
+<%= render "breadcrumb" %>
+<br/>
+<%= render 'models/index' %>
+

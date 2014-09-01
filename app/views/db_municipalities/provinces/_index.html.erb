@@ -1,0 +1,40 @@
+<%= render "layouts/header_index", :subclass => "Province" %>
+
+<br/>
+<% if !@provinces.empty? %>
+
+  <div id="pagination_table">
+  <table class="table table-hover table-striped">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Abbreviation</th>
+      <th>Region</th>
+      <% if current_user %>
+        <th></th>
+        <th></th>
+      <% end %>
+    </tr>
+
+    <% @provinces.each_with_index do |province,index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= link_to province.name, province, :class => "show-loading" %></td>
+      <td><%= province.abbreviation %></td>
+      <td><%= link_to province.region.name, province.region if province.region %></td>
+      <% if current_user %>
+        <td><%= link_to 'Edit', edit_province_path(province), 
+          :class => "btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', province, method: :delete, 
+          data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </table>
+  </div>
+
+<% else %>
+<p class="muted">
+  <i>No provinces for this region!</i>
+</p>
+<% end %>

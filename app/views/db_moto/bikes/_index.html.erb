@@ -1,0 +1,35 @@
+<%= render "layouts/header_index", :subclass => "Bike" %>
+
+<% if @model.bikes && @model.bikes.size > 0 %>
+<div id="pagination_table">
+  <table class="table table-striped">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <% if current_user %>
+        <th></th>
+        <th></th>
+      <% end %>
+    </tr>
+
+  <% @model.bikes.each_with_index do |bike,index| %>
+    <tr>
+      <td><%= index+1 %></td>
+      <td><%= link_to bike.equipment_name, bike, :class => "show-loading" %></td>
+      <% if current_user %>
+        <td><%= render "buttons/edit", :item => bike %></td>
+        <td><%= render "buttons/delete", :item => bike %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+
+
+
+<% else %>
+<p class="muted text_big">
+  <i><%= _("Nessun risultato trovato!") %></i>
+</p>
+<% end %>

@@ -1,0 +1,33 @@
+<div class="well">
+
+  <% if item.is_geolocated? %>
+    <div id="map" style='width: 100%; height: 500px;'></div>
+
+    <script type="text/javascript">
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers([
+        {
+          "lat": <%= item.latitude %>,
+          "lng": <%= item.longitude %>,
+          // "picture": {
+          //   "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+          //   "width":  36,
+          //   "height": 36
+          // },
+          "infowindow": "<%= item.name %>"
+        }
+      ]);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(14);
+    });
+    </script>
+
+  <% else %>
+    <p class="muted">
+      <i>Unfortunately the position is unknown!</i>
+    </p>
+  <% end %>
+
+</div>

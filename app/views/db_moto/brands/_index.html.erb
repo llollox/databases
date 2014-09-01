@@ -1,0 +1,28 @@
+<%= render "layouts/header_index" %>
+
+ <div id="pagination_table">
+  <table class="table table-striped">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Models</th>
+      <% if current_user %>
+        <th></th>
+        <th></th>
+      <% end %>
+    </tr>
+
+    <% @brands.each_with_index do |brand,index| %>
+    <tr>
+      <td><%= index+1 %></td>
+      <td><%= link_to brand.name, brand, :class => "show-loading" %></td>
+      <td><%= brand.models.size %></td>
+      <% if current_user %>
+        <td><%= render "buttons/edit", :item => brand %></td>
+        <td><%= render "buttons/delete", :item => brand %></td>
+      <% end %>
+    </tr>
+    <% end %>
+    
+  </table>
+</div> 

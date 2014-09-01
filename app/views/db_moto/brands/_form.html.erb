@@ -1,0 +1,10 @@
+<%= f.input :name, :label => "Name", :placeholder => "Name" %>
+
+<%= f.input :logo, :as => :file, :label => "Logo" %>  
+
+<% if @brand.logo %>
+  <div class="col-sm-10 col-sm-offset-2">
+    <%= image_tag(@brand.logo.photo.url(:thumb), :class => "img-rounded") %>
+    <br/><br/>
+  </div>
+<% end %>

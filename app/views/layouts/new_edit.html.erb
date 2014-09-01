@@ -1,0 +1,15 @@
+<%= render "layouts/header_form" %>
+
+<% item = instance_variable_get("@#{controller_name.classify.downcase}") %>
+<%= simple_form_for(item, html: { class: 'form-horizontal' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= render 'form', :f => f %>
+  </div>
+
+  <div class="col-sm-offset-2">
+    <%= f.button :submit, "#{form_action}", :class => "btn #{submit_class}" %>
+  </div>
+<% end %>
+

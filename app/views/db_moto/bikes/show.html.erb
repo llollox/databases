@@ -1,0 +1,29 @@
+<br/>
+
+<center>
+	<%= image_tag(@bike.brand.logo.photo.url(:thumb)) if @bike.brand.logo %>
+	<h2><%= @bike.brand.name + " " + @bike.equipment_name %></h2>
+	<br/>
+	<% if current_user %>
+    <td><%= render "buttons/edit", :item => @bike %></td>
+    <td><%= render "buttons/delete", :item => @bike %></td>
+  <% end %>
+</center>
+<br/>
+<%= render "breadcrumb" %>
+
+<br/>
+
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<%= render 'bikes/fields' %>
+
+		<legend>Image</legend>
+		<%= image_tag @bike.pictures.first.photo.url, 
+				:class => "img-thumbnil" if !@bike.pictures.blank? %>
+
+	</div>
+</div>
+
+<br/><br/>
+<br/><br/>

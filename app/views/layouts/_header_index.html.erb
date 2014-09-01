@@ -1,0 +1,19 @@
+<% class_name = controller_name.classify %>
+<% class_name = subclass if action_name == "show" %>
+
+<center>
+  <% if action_name == "index" %>
+    <h2>List of <%= class_name.pluralize.capitalize %></h2>
+  <% else %>
+    <legend style="text-align:left;"><%= class_name.pluralize.capitalize %></legend>
+  <% end %>
+  <%= alphabetical_paginate @alphaParams if !@alphaParams.blank?%>
+</center>
+
+<br/>
+<% action_path = [:new, class_name.downcase] %>
+<% action_path = [:new, instance_variable_get("@#{controller_name.classify.downcase}"), class_name.downcase] if action_name == "show" %>
+
+<%= link_to command_label('fa fa-plus',"New #{class_name}"), action_path, 
+      :class => "btn btn-success", :style => "margin-left:20px;" if current_user %>
+<br/><br/>

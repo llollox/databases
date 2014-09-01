@@ -1,0 +1,8 @@
+<%= f.input :name, :label => "Name", :placeholder => "Name" %>
+<%= f.input :istat_code, :label => "Istat Code", :placeholder => "Istat Code" %>
+<%= f.input :cadastral_code, :label => "Cadastral Code", :placeholder => "Cadastral Code" %>
+<%= f.input :telephone_prefix, :label => "Telephone Prefix", :placeholder => "Telephone Prefix" %>
+<%= f.association :province, :label => "Province", include_blank: "Select a province" %>
+<%= render "forms/symbol", :f => f %>
+<%= render "forms/territorial_fields", :f => f %>
+<%= render "forms/contact_fields", :f => f %>

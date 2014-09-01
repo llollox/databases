@@ -1,0 +1,6 @@
+<%= f.input :name, :label => "Name", :placeholder => "Name" %>
+<%= f.input :abbreviation, :label => "Abbreviation", :placeholder => "Abbreviation" %>
+<%= f.association :region, :label => "Region", include_blank: "Select a region" %>
+<%= render "forms/symbol", :f => f %>
+<%= render "forms/territorial_fields", :f => f %>
+<%= render "forms/contact_fields", :f => f %>

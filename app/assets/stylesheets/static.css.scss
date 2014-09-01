@@ -1,0 +1,33 @@
+// Place all the styles related to the static controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.jumbotron{
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(image_path('big-data.png'));
+  border-radius: 5px;
+  color: white;
+  height: 250px;
+  
+  h1, p{
+    text-shadow: 2px 2px #212121;
+  }
+}
+
+div.db_item{
+  text-align: center;
+  padding: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  img{
+    height: 250px;
+    width: 250px;
+  }
+  
+  p{
+    text-align: left;
+  }
+}

@@ -1,0 +1,25 @@
+<legend>Localities (<%= localities.size.to_s %>)</legend>
+<% if !localities.blank? %>
+  <table class="table table-hover table-striped">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Province</th>
+      <th>Region</th>
+    </tr>
+
+    <% localities.each_with_index do |locality,index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= link_to locality.name, locality %></td>
+      <td><%= link_to locality.province.name, locality.province %></td>
+      <td><%= link_to locality.region.name, locality.region %></td>
+    </tr>
+    <% end %>
+  </table>
+
+<% else %>
+<p class="muted">
+  <i>No localities for this pass!</i>
+</p>
+<% end %>

@@ -1,0 +1,6 @@
+<% class_name = controller_name.classify %>
+<div class="header-container">
+  <h2><%= "#{form_action} #{class_name}" %></h2>
+  <%= link_to command_label('fa fa fa-angle-left','Back'), :back, :class => "btn btn-default show-loading" %>
+</div>
+<hr/>

@@ -1,0 +1,14 @@
+<br/>
+<center>
+  <%= image_tag(@model.brand.logo.photo.url(:thumb)) if @model.brand.logo %>
+  <h2><%= @model.brand.name + " " + @model.name %></h2>
+	<% if current_user %>
+    <td><%= render "buttons/edit", :item => @model %></td>
+    <td><%= render "buttons/delete", :item => @model %></td>
+  <% end %>
+</center>
+<br/>
+<%= render "breadcrumb" %>
+<br/>
+<%= render "bikes/index" %>
+  
