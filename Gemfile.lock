@@ -6,6 +6,12 @@ GIT
       actionpack (~> 4.0)
       activemodel (~> 4.0)
 
+GIT
+  remote: git://github.com/jetthoughts/yaml_db.git
+  revision: 5f73cbd14adee939adf08574ec3bf6e05ee55889
+  specs:
+    yaml_db (0.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -231,7 +237,6 @@ GEM
     underscore-rails (1.6.0)
     will-paginate-i18n (0.1.15)
     will_paginate (3.0.7)
-    yaml_db (0.2.3)
     yard (0.8.7.4)
 
 PLATFORMS
@@ -283,4 +288,4 @@ DEPENDENCIES
   underscore-rails
   will-paginate-i18n
   will_paginate
-  yaml_db
+  yaml_db!

@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: moto_development
+  pool: 5
+  username: postgres
+  password: 

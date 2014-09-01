@@ -2,7 +2,8 @@ module ConnectToDbMunicipalities
   extend ActiveSupport::Concern
 
   included do
-    establish_connection "#{Rails.env}_db_municipalities".to_sym
+    databases = YAML::load(IO.read('config/databases/municipalities.yml'))
+    establish_connection(databases[Rails.env])
   end
 
 end

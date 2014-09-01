@@ -1,9 +1,6 @@
 class Bike < ActiveRecord::Base
   include ConnectToDbMoto
 
-  # has_many :pictures, as: :picturable, dependent: :destroy
-  # accepts_nested_attributes_for :pictures, allow_destroy:true, :reject_if => lambda { |a| a[:photo].blank? }
-
   has_many :pictures, :class_name => "DbMotoPicture", as: :picturable, dependent: :destroy
   accepts_nested_attributes_for :pictures, allow_destroy:true, :reject_if => lambda { |a| a[:photo].blank? }
 
