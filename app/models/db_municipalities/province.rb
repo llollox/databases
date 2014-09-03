@@ -1,5 +1,6 @@
 class Province < ActiveRecord::Base
   include ConnectToDbMunicipalities
+  include Searchable
 
   belongs_to :region
   has_many :municipalities
