@@ -2,8 +2,6 @@ class Pass < ActiveRecord::Base
   include ConnectToDbPasses
   include Searchable
   include Geolocable
-  
-  has_many :localities
 
   def address
     address = self.name 
@@ -15,7 +13,7 @@ class Pass < ActiveRecord::Base
     return address + ", Italy"
   end
 
-  def localitiables
+  def localities
     result = []
     Locality.where(:pass_id => self.id).each do |locality|
       result = result << locality.localitiable
