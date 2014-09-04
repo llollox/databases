@@ -4,6 +4,7 @@
   <table class="table table-striped">
     <tr>
       <th>#</th>
+      <th>Logo</th>
       <th>Name</th>
       <th>Models</th>
       <% if current_user %>
@@ -15,6 +16,7 @@
     <% @brands.each_with_index do |brand,index| %>
     <tr>
       <td><%= index+1 %></td>
+      <td><%= image_tag brand.logo.photo.url(:thumb) %></td>
       <td><%= link_to brand.name, brand, :class => "show-loading" %></td>
       <td><%= brand.models.size %></td>
       <% if current_user %>

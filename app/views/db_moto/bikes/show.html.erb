@@ -2,7 +2,7 @@
 
 <center>
 	<%= image_tag(@bike.brand.logo.photo.url(:thumb)) if @bike.brand.logo %>
-	<h2><%= @bike.brand.name + " " + @bike.equipment_name %></h2>
+	<h2><%= @bike.brand.name + " " + @bike.name %></h2>
 	<br/>
 	<% if current_user %>
     <td><%= render "buttons/edit", :item => @bike %></td>

@@ -4,9 +4,9 @@ class DbMotoPicture < ActiveRecord::Base
   
 
   has_attached_file :photo, 
-  :storage => :dropbox,
-  :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
-  :path => "db_moto_pictures/:style/:id_:filename",
+  # :storage => :dropbox,
+  # :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+  # :path => "db_moto_pictures/:style/:id_:filename",
 
   :styles => lambda { |a|
    if a.instance.is_pdf?

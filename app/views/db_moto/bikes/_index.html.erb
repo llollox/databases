@@ -15,7 +15,7 @@
   <% @model.bikes.each_with_index do |bike,index| %>
     <tr>
       <td><%= index+1 %></td>
-      <td><%= link_to bike.equipment_name, bike, :class => "show-loading" %></td>
+      <td><%= link_to bike.name, bike, :class => "show-loading" %></td>
       <% if current_user %>
         <td><%= render "buttons/edit", :item => bike %></td>
         <td><%= render "buttons/delete", :item => bike %></td>

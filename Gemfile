@@ -87,6 +87,8 @@ gem 'json'
 gem 'geocoder'
 gem 'dalli', '~> 2.6.2'
 
+gem 'bike_travel_databases'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -26,7 +26,7 @@ development:
 development_db_moto:
   adapter: postgresql
   encoding: unicode
-  database: db_moto_development
+  database: moto_development
   pool: 5
   username: postgres
   password: 
