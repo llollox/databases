@@ -3,6 +3,8 @@ class Pass < ActiveRecord::Base
   include Searchable
   include Geolocable
 
+  has_many :pictures, :class_name => "DbPassiPanoramioPicture", as: :picturable, dependent: :destroy
+
   def address
     address = self.name 
     if !self.localities.empty?
