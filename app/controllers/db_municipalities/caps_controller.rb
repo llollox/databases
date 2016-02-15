@@ -1,7 +1,7 @@
 class CapsController < DbMunicipalitiesController
 
-  require "#{Rails.root}/lib/tasks/task_utilities"
-  include TaskUtilities
+  # require "#{Rails.root}/lib/tasks/task_utilities"
+  # include TaskUtilities
 
   before_filter :check_login, :only => [:delete, :create, :new, :update, :edit]
 
