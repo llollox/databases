@@ -24,5 +24,7 @@ module Databases
     config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**}')]
     config.autoload_paths += Dir[Rails.root.join('app', 'controllers', '{**}')]
     config.autoload_paths += Dir[Rails.root.join('app', 'views', '{**}')]
+
+    config.assets.precompile += %w( alphabetical_paginate.js )
   end
 end
