@@ -28,7 +28,6 @@ namespace :municipalities do
     task :rollback => :set_custom_db_config_paths do
       Rake::Task["db:rollback"].invoke
     end
-
     
     task :restore => :set_custom_db_config_paths do
       Rake::Task["db:drop"].invoke
@@ -38,8 +37,7 @@ namespace :municipalities do
 
     task :dump => :set_custom_db_config_paths do
       exec "pg_dump --host localhost --username postgres --clean --no-owner --no-acl --format=c municipalities_development > #{Rails.root}/db/db_municipalities/dump.dump"
-    end      
-    
+    end
 
     task :seed => :set_custom_db_config_paths do
       Rake::Task["db:seed"].invoke

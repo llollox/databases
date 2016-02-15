@@ -1,7 +1,6 @@
 class DbMotoPicture < ActiveRecord::Base
   include ConnectToDbMoto
   belongs_to :picturable, polymorphic: true
-  
 
   has_attached_file :photo, 
   # :storage => :dropbox,
