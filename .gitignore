@@ -32,4 +32,4 @@ bower.json
 .DS_Store
 */.DS_Store
 .ruby-version
-Gemfile.lock
+#Gemfile.lock
