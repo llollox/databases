@@ -52,8 +52,8 @@ end
 # gem 'compass-rails', github: 'Compass/compass-rails', branch: '2-0-stable'
 gem 'compass-rails'
 
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'autoprefixer-rails', '>= 5.0.0.1'
 gem 'bootstrap-datepicker-rails'
 gem 'font-awesome-rails'
 
